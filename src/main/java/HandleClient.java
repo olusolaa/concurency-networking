@@ -87,7 +87,8 @@ public class HandleClient extends Thread {
         else if (path.equals("/json") || path.equals("/json/")){
             path = "jsonFile";
         }
-        return Paths.get("/Users/a/Desktop/concurency-networking/src/main/java/" +path);
+        else path = "errorFile.html";
+        return Paths.get(System.getProperty("user.dir"), "src", "main", "java", path);
     }
 
     public static String getContentType(Path filePath) throws IOException {
